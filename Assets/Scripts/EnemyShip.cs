@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class EnemyShip : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        //Created enemy at the start
+        //Create enemy at start
         GameManager.instance.enemiesList.Add(this.gameObject);
-        //Aim at the player at start
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Always move forward
+        //Adjust rotation every update for heat seeking behavior
+        //Always fly forward
     }
 
     void OnDestroy()

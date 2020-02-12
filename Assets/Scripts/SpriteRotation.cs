@@ -11,8 +11,11 @@ public class SpriteRotation : MonoBehaviour
 
     //Create a variable for the degree we rotate in one frame draw
     public float turnSpeed = 1.0f;
-
     public float movementSpeed = 1.0f;
+
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +54,7 @@ public class SpriteRotation : MonoBehaviour
 
     public void Shoot()
     {
-        throw new NotImplementedException();
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
     //Player collision

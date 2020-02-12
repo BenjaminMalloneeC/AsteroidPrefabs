@@ -2,26 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
+    public Transform tf;
+    public float bulletSpeed = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
-        //Created enemy at the start
-        GameManager.instance.enemiesList.Add(this.gameObject);
-        //Aim at the player at start
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //Always move forward
-    }
-
-    void OnDestroy()
-    {
-        //Removes enemy when they get destroyed
-        GameManager.instance.enemiesList.Remove(this.gameObject);
+        tf.position += tf.right * bulletSpeed * Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D otherObject)

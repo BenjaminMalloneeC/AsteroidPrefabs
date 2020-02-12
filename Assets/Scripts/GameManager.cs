@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     //Creates a list of enemies
     public List<GameObject> enemiesList = new List<GameObject>();
+    public GameObject[] enemyPrefabs;
 
     public void Awake()
     {
